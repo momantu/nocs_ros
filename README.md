@@ -18,9 +18,9 @@ We use it in our Mobile Manipulation Tutorial. Our website is [here](https://git
 ## Installation
 Need to create a new ROS workspace, e.g., "nocs_ws". 
 ```
-mkdir -p ~/nocs_ws/src
-cd ~/nocs_ws/src
-git clone https://github.com/momantu/nocs_ros.git
+mkdir ~/nocs_ws
+cd ~/nocs_ws
+git clone https://github.com/momantu/nocs_ros.git src
 ```
 
 
@@ -46,6 +46,7 @@ Install dependencies for running with ROS.
 sudo apt update
 sudo apt install python3-catkin-pkg-modules python3-rospkg-modules python3-empy		
 sudo apt-get install python-catkin-tools python3-dev python3-numpy python3-yaml ros-melodic-cv-bridge
+cd ~/nocs_ws/src/
 git submodule update --init --recursive
 cd ~/nocs_ws/
 rosdep install --from-paths src --ignore-src -y -r
@@ -61,7 +62,7 @@ pip install -U rosdep rosinstall_generator wstool rosinstall six
 
 ## Usage
 ### Pretrain weights
-You can download the [checkpoints](http://download.cs.stanford.edu/orion/nocs/ckpts.zip) and store them under logs/. We are using "logs/nocs_rcnn_res50_bin32.h5" as default.
+You can download the [checkpoints](http://download.cs.stanford.edu/orion/nocs/ckpts.zip) and store them under nocs_srv/logs/. We are using "logs/nocs_rcnn_res50_bin32.h5" as default.
 
 ### Parameter Setting
 Set the parameters in the launch file ``pose_estimation_server.launch``:
@@ -84,9 +85,8 @@ Start the pose estimation ROS service:
 
 ```
 conda activate NOCS-env
-cd ~/nocs_ws
-source /nocs_ws/devel/setup.bash
-roslaunch nocs_srv pose_estimation_action_server.launch 
+source ~/nocs_ws/devel/setup.bash
+roslaunch nocs_srv pose_estimation_server.launch
 ```
 
 Call the service with:
