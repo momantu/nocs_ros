@@ -1,0 +1,6 @@
+[submodule "geometry2"]
+	path = geometry2
+	url = https://github.com/ros/geometry2
+[submodule "vision_opencv"]
+	path = vision_opencv
+	url = https://github.com/ros-perception/vision_opencv.git

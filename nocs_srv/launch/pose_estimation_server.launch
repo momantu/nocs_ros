@@ -1,0 +1,13 @@
+<launch>
+    <node name="pose_estm_srv" pkg="nocs_srv" type="start_nocs.py" output="screen">
+        <param name="rgb_topic" value="/head_camera/rgb/image_raw"/>
+        <param name="dep_topic" value="/head_camera/depth_registered/image_raw"/>
+        <param name="camera_optical_frame" value="head_camera_rgb_optical_frame"/>
+        <param name="intrinsics_fx" value="554.257"/>
+        <param name="intrinsics_fy" value="554.255"/>
+        <param name="intrinsics_x0" value="320.5"/>
+        <param name="intrinsics_y0" value="240.5"/>
+        <param name="detect_range" value="180"/>
+    </node>
+</launch>
+
