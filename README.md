@@ -49,7 +49,7 @@ sudo apt-get install python-catkin-tools python3-dev python3-numpy python3-yaml 
 git submodule update --init --recursive
 cd ~/nocs_ws/
 rosdep install --from-paths src --ignore-src -y -r
-# replace 3.5 with 3.6 if you have /usr/include/python3.6m instead:
+# replace 3.6 with 3.5 if you have /usr/include/python3.6m instead:
 catkin_make --cmake-args \
             -DCMAKE_BUILD_TYPE=Release \
             -DPYTHON_EXECUTABLE=/usr/bin/python3 \
@@ -73,7 +73,7 @@ Set the parameters in the launch file ``pose_estimation_server.launch``:
 `camera_optical_frame`: The frame_id of the `rgb_topic`.
 
 Fill the parameter `intrinsics_fx`, `intrinsics_fy`, `intrinsics_x0` and `intrinsics_y0` according to your camera's intrinsics matrix 
- <img src="https://latex.codecogs.com/gif.latex? \left[ \begin{matrix}   fx & 0 & x0 \\   0 & fy & y0 \\   0 & 0 & 0  \end{matrix}  \right]  " /> 
+  ![image](https://github.com/momantu/nocs_ros/blob/master/images/intrinsics.gif)
 
 
 
