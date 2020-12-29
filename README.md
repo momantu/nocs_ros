@@ -37,9 +37,6 @@ pip install --upgrade scikit-image
 pip install open3d-python
 pip install pycocotools
 pip install keras
-pip install numpy==1.18
-pip install scipy==1.1.0
-pip install scikit-learn==0.21.3
 ```
 Install dependencies for running with ROS.
 ```
@@ -119,7 +116,7 @@ Then the estimated pose of the detected object will be published into the tf mes
     ```
     Reference: https://stackoverflow.com/questions/62465620/error-keras-requires-tensorflow-2-2-or-higher
     
-* Get importerror: cannot import name 'pca' from 'matplotlib.mlab'
+* Get importerror: cannot import name 'pca' from 'matplotlib.mlab'. 
     It is because PAC() is removed in the version after Matplotlib 2.2.
     Solution:
     ```
