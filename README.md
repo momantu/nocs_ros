@@ -101,6 +101,14 @@ Then the estimated pose of the detected object will be published into the tf mes
     ```
     ImportError: Keras requires TensorFlow 2.2 or higher. Install TensorFlow via `pip install tensorflow`
     ```
+  or get error:
+    ```
+    module 'tensorflow' has no attribute 'Session'
+    ```
+    or
+    ```
+    module 'tensorflow' has no attribute 'ConfigProto'
+    ```
     Solution:
     Upgrade `tensorflow` to lastest version (>=2.2) to install `keras`, then downgrade `tensorflow` to required version (1.14.0):
     ```
@@ -110,6 +118,14 @@ Then the estimated pose of the detected object will be published into the tf mes
     pip install --user --upgrade tensorflow-gpu==1.14.0
     ```
     Reference: https://stackoverflow.com/questions/62465620/error-keras-requires-tensorflow-2-2-or-higher
+    
+* Get importerror: cannot import name 'pca' from 'matplotlib.mlab'
+    It is because PAC() is removed in the version after Matplotlib 2.2.
+    Solution:
+    ```
+    pip install matplotlib==2.2
+    ```
+    Reference: https://matplotlib.org/3.1.0/api/api_changes.html
 
 * Get error:
     ```
